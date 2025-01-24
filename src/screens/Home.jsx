@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux'
 import OpenLink from '../components/core/OpenLink.jsx'
 import Body from '../components/home/Body.jsx'
 import Footer from '../components/home/Footer.jsx'
@@ -10,8 +11,10 @@ const Home = () => {
     const vite = 'Vite'
     const react = 'React'
     const github = 'GitHub'
+    const count = useSelector((state) => state.counter.value)
     return (
       <>
+      Count value: <span>{count}</span>
         <div>
           <OpenLink 
             redirectURL="https://vite.dev"

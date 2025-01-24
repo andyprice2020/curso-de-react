@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   // Para este caso, aquí es donde definimos las variables globales del componente Counter.jsx
   // Para futuros desarrollos en la carpeta features estarán los slices que manejarán el estado del componente.
-  value: 10,
+  value: 50,
   isLogged: 'false',
 };
 
@@ -12,10 +12,10 @@ export const counterSlice = createSlice({
   initialState,
   reducers: {
     increment: (state) => {
-      state.value += 1
+      state.value += 10
     },
     decrement: (state) => {
-      state.value -= 1
+      state.value -= 10
     },
     incrementByAmount: (state, action) => {
       state.value += action.payload
