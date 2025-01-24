@@ -4,11 +4,13 @@ import { decrement, increment } from '../../store/features/counter/counterSlice.
 const Counter = () => {
   
   const count = useSelector((state) => state.counter.value)
+  const isLogged = useSelector((state) => state.counter.isLogged)
   const dispatch = useDispatch()
 
   return (
     <div>
-      <div>
+      <span>{isLogged}</span>
+      <div>      
         <button
           aria-label="Increment value"
           onClick={() => dispatch(increment())}
