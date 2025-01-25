@@ -1,7 +1,9 @@
+import { useSelector } from 'react-redux'
 const About = () => {
+    const initialValue = useSelector((state) => state.product.initialValue)
     return(
         <>
-        <p className="h2">About page</p>
+        <h2>Initial value is: {initialValue}</h2>
         </>
     );
 }

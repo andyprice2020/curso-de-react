@@ -4,7 +4,8 @@ const Product = () => {
     const data = useSelector((state) => state.product.dataProduct)
     return(
         <>
-        <FilterableProductTable products={data} />;
+        <h3>Practice 1 - Products</h3>
+        <FilterableProductTable products={data} />
         </>
     );
 };

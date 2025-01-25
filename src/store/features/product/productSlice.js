@@ -15,7 +15,12 @@ const initialState = {
 export const productSlice = createSlice({
     name: 'product',
     initialState,
-    reducers: {    },
+    reducers: {
+        setInitialValue: (state,payload) => {
+            state.initialValue = payload;
+        }
+    },
 });
 
+export const { setInitialValue } = productSlice.actions;
 export default productSlice.reducer;
