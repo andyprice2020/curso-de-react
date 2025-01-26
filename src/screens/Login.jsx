@@ -1,7 +1,8 @@
+import FormLogin from '../components/forms/FormLogin.jsx'
 const Login = () => {
     return(
         <>
-        <p className="h2">Login page</p>
+        <FormLogin titleForm="Welcome to Fullstack Program" />
         </>
     );
 }
