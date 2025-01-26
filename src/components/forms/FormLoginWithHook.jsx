@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
-const FormLogin = ({titleForm}) => {
-    const [formData, setFormData] = useState({
+import useForm from '../hooks/useForm.js'
+const FormLoginWithHook = ({ titleForm }) => {
+    const { formData, handleChange } = useForm({
         username: '',
         email: ''
     });
@@ -11,13 +11,6 @@ const FormLogin = ({titleForm}) => {
         console.log('Form Data:', formData);
     };
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
-    }
     return (
       <>
         <form onSubmit={handleSubmit}>
@@ -52,4 +45,4 @@ const FormLogin = ({titleForm}) => {
     );        
 };
 
-export default FormLogin;
+export default FormLoginWithHook;
