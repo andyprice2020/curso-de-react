@@ -4,7 +4,7 @@ import FormLoginWithMotionAndHook from '../components/forms/FormLoginWithMotionA
 const Login = () => {
     return(
         <>
-        <FormLoginWithMotionAndHook titleForm="Welcome to Fullstack Program (With Motion, Hook and modal)" />
+        <FormLoginWithMotionAndHook titleForm="Welcome to Fullstack Program" />
         </>
     );
 }

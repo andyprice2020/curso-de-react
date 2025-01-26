@@ -5,8 +5,10 @@ import ModalInfo from '../../components/modals/ModalInfo.jsx'
 // eslint-disable-next-line react/prop-types
 const FormWithMotionAndHook = ({titleForm}) => {
     const {formData, handleChange} = useForm({
-        username: '',
-        email: ''
+      module:'',
+      username: '',
+      email: '',
+      password: ''
     });
     const [showModal, setShowModal] = useState(false);
 
@@ -47,6 +49,24 @@ const FormWithMotionAndHook = ({titleForm}) => {
           >
             <div>
               <label>
+                Module:
+                <input
+                  type="text"
+                  name="module"
+                  value={formData.module}
+                  onChange={handleChange}
+                  required
+                />
+              </label>
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ x: -100 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div>
+              <label>
                 Username:
                 <input
                   type="text"
@@ -77,11 +97,29 @@ const FormWithMotionAndHook = ({titleForm}) => {
             </div>
           </motion.div>
           <motion.div
+            initial={{ x: -100 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div>
+              <label>
+                Password:
+                <input
+                  type="password"
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  required
+                />
+              </label>
+            </div>
+          </motion.div>
+          <motion.div
             initial={{ y: 100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <button type="submit">Submit</button>
+            <button type="submit">Login</button>
           </motion.div>
         </form>
       </motion.div>
