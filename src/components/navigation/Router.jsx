@@ -5,11 +5,11 @@ import About from '../../screens/About.jsx'
 import Product from '../../screens/Product.jsx'
 import Think from '../../screens/Think.jsx'
 import Counter from '../counter/Counter.jsx'
-import LandingPage from '../../screens/LandingPage.jsx'
+import Landing from '../../screens/Landing.jsx'
 const Router = () => {
     return(
         <Routes>
-            <Route path="/" element={<LandingPage />} />
+            <Route path="/" element={<Landing />} />
             <Route path="/login" element={<Login />} />
             <Route path="/home" element={<Home />} />
             <Route path="/products" element={<Product />} />
