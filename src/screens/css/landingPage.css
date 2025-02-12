@@ -1,0 +1,35 @@
+/* src/components/LandingPage.css */
+.landing-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .header {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .section {
+    margin-bottom: 20px;
+  }
+  
+  .temas-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .temas-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+  }
