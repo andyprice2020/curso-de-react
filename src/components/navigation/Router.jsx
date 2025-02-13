@@ -6,6 +6,7 @@ import Product from '../../screens/Product.jsx'
 import Think from '../../screens/Think.jsx'
 import Counter from '../counter/Counter.jsx'
 import Landing from '../../screens/Landing.jsx'
+import Dictionary from '../../screens/Dictionary.jsx'
 const Router = () => {
     return(
         <Routes>
@@ -16,6 +17,7 @@ const Router = () => {
             <Route path="/think" element={<Think />} />
             <Route path="/about" element={<About />} />
             <Route path="/counter" element={<Counter />} />
+            <Route path="/dictionary" element={<Dictionary />} />
         </Routes>
     );
 }
