@@ -17,7 +17,7 @@ const DictionaryBase = () => {
 
   const handleAddWord = (newWord) => {
 
-    console.log('Agregando palabra...', newWord);    
+    console.log('Adicionando palabra...', newWord);    
     dispatch(addWord(newWord));
     setShowAddModal(false);
   }
