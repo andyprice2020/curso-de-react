@@ -22,7 +22,7 @@ const dictionarySlice = createSlice({
 
     translateWord: (state, action) => {
       const foundWord = state.words.find(word => Object.values(word).includes(action.payload));
-      return foundWord || { message: "Palabra no encontrada" };
+      return foundWord || { message: "Palabra inexistente" };
     }
   },
 });
