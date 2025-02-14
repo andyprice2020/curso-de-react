@@ -16,15 +16,11 @@ const DictionaryBase = () => {
   const [wordToRemove] = useState('');
 
   const handleAddWord = (newWord) => {
-
-    console.log('Adicionando palabra...', newWord);    
     dispatch(addWord(newWord));
     setShowAddModal(false);
   }
 
   const handleRemoveWord = (word) => {
-
-    console.log('Quitando palabra...', word);
     
     const normalizeWord = word.trim().toLowerCase();
 
@@ -36,17 +32,14 @@ const DictionaryBase = () => {
     );
 
     if (foundWord) { 
-      console.log('Palabra hallada para quitar:', foundWord);      
       dispatch(removeWord(foundWord)); 
     } else { 
-      console.log('No existe la palabra', foundWord);      
       alert('No se encontró la palabra en el diccionario.'); 
     }
     setShowRemoveModal(false);
   }
 
   const handleTranslateWord = (word) => {
-    console.log('Traduciendo: ', word);
     const foundWord = words.find(
       (w) =>
         w.spanish.toLowerCase() === word.toLowerCase() ||
@@ -54,33 +47,27 @@ const DictionaryBase = () => {
         w.portuguese.toLowerCase() === word.toLowerCase()
     );
     if (foundWord) {
-      console.log('Palabra para traducir:', foundWord);
       return foundWord;
     } else {
-      console.log('No existe palabra para traducir');
       return null;
     }
   };
   
   return (
-    <div>
-      
+    <div>      
       <button onClick={() => setShowAddModal(true)}>Agregar palabra</button>
       <button onClick={() => setShowRemoveModal(true)}>Quitar palabra</button>
       <button onClick={() => setShowTranslateModal(true)}>Traducir palabra</button>
-
       <AddWordModal
         isOpen={showAddModal}
         onClose={() => setShowAddModal(false)}
         onAddWord={handleAddWord}
       />
-
       <RemoveWordModal
         isOpen={showRemoveModal}
         onClose={() => setShowRemoveModal(false)}
         onRemoveWord={handleRemoveWord}
       />
-
       <TranslateWordModal
         isOpen={showTranslateModal}
         onClose={() => setShowTranslateModal(false)}

@@ -8,21 +8,25 @@ const TranslateWordModal = ({ isOpen, onClose, onTranslateWord  }) => {
   
     const handleSubmit = () => {
       if (word) {
-        console.log('Buscando...', word);
         const foundWord = onTranslateWord(word);        
         if (foundWord) {
-          console.log('Palabra encontrada', foundWord);          
           setTranslation(
             `Spanish: ${foundWord.spanish}, English: ${foundWord.english}, Portuguese: ${foundWord.portuguese}`
           );
         } else {
-          console.log('Palabra inexistente');          
           setTranslation('Palabra inexistente');
         }
+        setWord('');
       } else {
         alert('Ingrese una palabra');
       }
     };
+
+    const handleClose = () => {
+      setWord('');
+      setTranslation('');
+      onClose();
+    }
   
     if (!isOpen) return null;
   
@@ -37,7 +41,7 @@ const TranslateWordModal = ({ isOpen, onClose, onTranslateWord  }) => {
             onChange={(e) => setWord(e.target.value)}
           />
           <button onClick={handleSubmit}>Traducir</button>
-          <button onClick={onClose}>Cancelar</button>
+          <button onClick={handleClose}>Cancelar</button>
           {translation && <p className="translation-result">{translation}</p>}
         </div>
       </div>
